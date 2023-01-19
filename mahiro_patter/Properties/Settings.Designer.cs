@@ -62,5 +62,53 @@ namespace mahiro_patter.Properties {
                 this["defaultRight"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool isTopMost {
+            get {
+                return ((bool)(this["isTopMost"]));
+            }
+            set {
+                this["isTopMost"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool isResizeAble {
+            get {
+                return ((bool)(this["isResizeAble"]));
+            }
+            set {
+                this["isResizeAble"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("640")]
+        public int windowSizeX {
+            get {
+                return ((int)(this["windowSizeX"]));
+            }
+            set {
+                this["windowSizeX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("360")]
+        public int windowSizeY {
+            get {
+                return ((int)(this["windowSizeY"]));
+            }
+            set {
+                this["windowSizeY"] = value;
+            }
+        }
     }
 }

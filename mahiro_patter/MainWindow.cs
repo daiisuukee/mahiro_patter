@@ -40,9 +40,15 @@ namespace mahiro_patter
         {
             InitializeComponent();
 
-            //
+            // 设置监控面板
             pictureBox1.Parent = Hands;
             pictureBox1.BackColor = Color.Transparent;
+
+            // 窗口大小初始化
+            PictureSizeChange(Properties.Settings.Default.windowSizeX,Properties.Settings.Default.windowSizeY);
+
+            // 窗口是否置顶
+            this.TopMost = Properties.Settings.Default.isTopMost;
 
             // 当前窗口恒定监控键盘(无焦点即可触发)
             this.KeyPreview = true;
@@ -208,6 +214,29 @@ namespace mahiro_patter
         {
             Setting setting= new Setting(this);
             setting.Show();
+        }
+
+        private void MainWindow_Resize(object sender, EventArgs e)
+        {
+            int x = ClientSize.Width;
+            int y = ClientSize.Height;
+            ClientSize= new Size(x, x * 36 / 64);
+            y = ClientSize.Height;
+            if (this.FormBorderStyle.Equals(FormBorderStyle.Sizable))
+            {
+                PictureSizeChange(x, y);
+                Properties.Settings.Default.windowSizeX = x;
+                Properties.Settings.Default.windowSizeY = y;
+                Properties.Settings.Default.Save();
+            }
+        }
+
+        private void PictureSizeChange(int x, int y)
+        {
+            pictureBox1.Size= new Size(x, y);
+            AvatorShower.Size = pictureBox1.Size;
+            Hands.Size = pictureBox1.Size;
+            ClientSize = pictureBox1.Size;
         }
     }
 }

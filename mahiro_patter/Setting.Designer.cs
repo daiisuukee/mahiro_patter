@@ -37,6 +37,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.Lable2 = new System.Windows.Forms.Label();
+            this.topMostCB = new System.Windows.Forms.CheckBox();
+            this.picSizeChangeCB = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -108,7 +110,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 12);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Version 1.0.0";
+            this.label1.Text = "Version 1.0.1";
             // 
             // linkLabel1
             // 
@@ -131,11 +133,37 @@
             this.Lable2.TabIndex = 9;
             this.Lable2.Text = "双击键值以删除";
             // 
+            // topMostCB
+            // 
+            this.topMostCB.AutoSize = true;
+            this.topMostCB.Location = new System.Drawing.Point(135, 145);
+            this.topMostCB.Name = "topMostCB";
+            this.topMostCB.Size = new System.Drawing.Size(72, 16);
+            this.topMostCB.TabIndex = 10;
+            this.topMostCB.Text = "置顶窗口";
+            this.topMostCB.UseVisualStyleBackColor = true;
+            this.topMostCB.CheckedChanged += new System.EventHandler(this.topMostCB_CheckedChanged);
+            this.topMostCB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.topMostCB_MouseClick);
+            // 
+            // picSizeChangeCB
+            // 
+            this.picSizeChangeCB.AutoSize = true;
+            this.picSizeChangeCB.Location = new System.Drawing.Point(135, 171);
+            this.picSizeChangeCB.Name = "picSizeChangeCB";
+            this.picSizeChangeCB.Size = new System.Drawing.Size(72, 16);
+            this.picSizeChangeCB.TabIndex = 11;
+            this.picSizeChangeCB.Text = "改变尺寸";
+            this.picSizeChangeCB.UseVisualStyleBackColor = true;
+            this.picSizeChangeCB.CheckedChanged += new System.EventHandler(this.picSizeChangeCB_CheckedChanged);
+            this.picSizeChangeCB.MouseHover += new System.EventHandler(this.picSizeChangeCB_MouseHover);
+            // 
             // Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(346, 268);
+            this.Controls.Add(this.picSizeChangeCB);
+            this.Controls.Add(this.topMostCB);
             this.Controls.Add(this.Lable2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label1);
@@ -166,5 +194,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label Lable2;
+        private System.Windows.Forms.CheckBox topMostCB;
+        private System.Windows.Forms.CheckBox picSizeChangeCB;
     }
 }

@@ -43,6 +43,7 @@
             this.AvatorShower.Location = new System.Drawing.Point(0, 0);
             this.AvatorShower.Name = "AvatorShower";
             this.AvatorShower.Size = new System.Drawing.Size(640, 360);
+            this.AvatorShower.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.AvatorShower.TabIndex = 0;
             this.AvatorShower.TabStop = false;
             // 
@@ -52,6 +53,7 @@
             this.Hands.Location = new System.Drawing.Point(0, 0);
             this.Hands.Name = "Hands";
             this.Hands.Size = new System.Drawing.Size(640, 360);
+            this.Hands.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Hands.TabIndex = 1;
             this.Hands.TabStop = false;
             // 
@@ -61,6 +63,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(640, 360);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.DoubleClick += new System.EventHandler(this.pictureBox1_DoubleClick);
@@ -78,6 +81,7 @@
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "真寻拍拍          双击图片进入设置≡ω≡";
+            this.Resize += new System.EventHandler(this.MainWindow_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.AvatorShower)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Hands)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

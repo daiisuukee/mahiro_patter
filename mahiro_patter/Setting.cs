@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace mahiro_patter
 {
@@ -19,6 +20,7 @@ namespace mahiro_patter
         public Setting(MainWindow app)
         {
             InitializeComponent();
+            this.app = app;
             Location= new Point(app.Location.X + 140, app.Location.Y + 50);
             foreach (string s in Properties.Settings.Default.defaultLeft)
             {
@@ -28,10 +30,11 @@ namespace mahiro_patter
             {
                 RightItem.Items.Add(s);
             }
+            this.topMostCB.CheckState = Properties.Settings.Default.isTopMost ? CheckState.Checked : CheckState.Unchecked;
+            this.picSizeChangeCB.CheckState = Properties.Settings.Default.isResizeAble ? CheckState.Checked : CheckState.Unchecked;
 
             KeyPreview = true;
             KeyDown += new KeyEventHandler(Setting_KeyDown);
-            this.app = app;
         }
 
         private void Setting_KeyDown(object sender, KeyEventArgs e)
@@ -114,6 +117,62 @@ namespace mahiro_patter
                 app.right.RemoveAt(index);
                 Properties.Settings.Default.Save();
                 RightItem.Items.RemoveAt(index);
+            }
+        }
+
+        // 窗口置顶
+        private void topMostCB_CheckedChanged(object sender, EventArgs e)
+        {
+            bool flag = this.topMostCB.Checked;
+            if (flag)
+            {
+                app.TopMost = true;
+                this.TopMost = true;
+                Properties.Settings.Default.isTopMost = true;
+                Properties.Settings.Default.Save();
+            } else
+            {
+                app.TopMost = false;
+                this.TopMost = false;
+                Properties.Settings.Default.isTopMost = false;
+                Properties.Settings.Default.Save();
+            }
+        }
+
+        private void picSizeChangeCB_CheckedChanged(object sender, EventArgs e)
+        {
+            bool flag = this.picSizeChangeCB.Checked;
+            if (flag)
+            {
+                app.FormBorderStyle = FormBorderStyle.Sizable;
+                Properties.Settings.Default.isResizeAble = true;
+                Properties.Settings.Default.Save();
+            } else
+            {
+                app.FormBorderStyle = FormBorderStyle.FixedSingle;
+                Properties.Settings.Default.isResizeAble = false;
+                Properties.Settings.Default.Save();
+            }
+        }
+
+        private void picSizeChangeCB_MouseHover(object sender, EventArgs e)
+        {
+
+            System.Windows.Forms.ToolTip toolTip1 = new System.Windows.Forms.ToolTip();
+
+            toolTip1.AutoPopDelay = 5000;//提示信息的可见时间
+            toolTip1.InitialDelay = 100;//事件触发多久后出现提示
+            toolTip1.ReshowDelay = 500;//指针从一个控件移向另一个控件时，经过多久才会显示下一个提示框
+            toolTip1.ShowAlways = true;//是否显示提示框
+
+            //  设置伴随的对象.
+            toolTip1.SetToolTip(this.picSizeChangeCB, "推荐窗口大小修改完毕后关闭'改变尺寸'项");//设置提示按钮和提示内容
+        }
+        private void topMostCB_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (topMostCB.Checked)
+            {
+                MessageBox.Show("当前窗口已置顶！");
             }
         }
     }
