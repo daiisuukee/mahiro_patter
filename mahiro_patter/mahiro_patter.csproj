@@ -114,7 +114,6 @@
     <EmbeddedResource Include="Setting.resx">
       <DependentUpon>Setting.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="mahiro_patter_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -128,39 +127,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cat.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cat_table.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cat_table_wink.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cat_wink.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\controller.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\key2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\key3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\key4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\key5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\key6.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mahiro00.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\leftHandDown.png" />
